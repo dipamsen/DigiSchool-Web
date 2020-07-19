@@ -1,6 +1,6 @@
 # DigiSchool: Web
 
-This repo is the Source Code of the [DigiSchool Website](https://dipamsen.github.io/DigiSchool-Web/).
+*DigiSchool* is a Digital Platform for School Education.
 
 [![Logo](./logo2.png)](https://dipamsen.github.io/DigiSchool-Web/)  
 
