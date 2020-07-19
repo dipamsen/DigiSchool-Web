@@ -12,7 +12,7 @@
 > - **Android App: [Github Repo]( https://github.com/dipamsen/DigiSchool-App ) | [APK Link](https://drive.google.com/drive/folders/16F14zIZ6pQgZ-JsOBIgZbXapbkh-F0ey?usp=sharing)** 
 
 
-> - The website is deployed on: https://dipamsen.github.io/DigiSchool-Web/
+- The website is deployed on: https://dipamsen.github.io/DigiSchool-Web/
 
 ---
 ### What is *DigiSchool*?   
