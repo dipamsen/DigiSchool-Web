@@ -9,7 +9,7 @@
 
 > *This repo is for the Website for DigiSchool. [Click Here](https://github.com/dipamsen/DigiSchool-Android) for the Android App.*
 >
-> - **Android App: [Github Repo]( https://github.com/dipamsen/DigiSchool-App ) | [APK Link](https://drive.google.com/drive/folders/16F14zIZ6pQgZ-JsOBIgZbXapbkh-F0ey?usp=sharing)** 
+> - **Android App: [Github Repo]( https://github.com/dipamsen/DigiSchool-Android ) | [APK Link](https://drive.google.com/drive/folders/16F14zIZ6pQgZ-JsOBIgZbXapbkh-F0ey?usp=sharing)** 
 
 
 - The website is deployed on: https://dipamsen.github.io/DigiSchool-Web/
