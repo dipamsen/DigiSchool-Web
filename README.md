@@ -2,7 +2,7 @@
 
 This repo is the Source Code of the DigiSchool Website.
 
-![Logo](./logo2.png)
+[![Logo](./logo2.png)](https://dipamsen.github.io/DigiSchool-Web/)
 [DigiSchool Website](https://dipamsen.github.io/DigiSchool-Web/)
 
 > *This repo is for the Website for DigiSchool. [Click Here](https://github.com/dipamsen/DigiSchool-App) for the Android App.*
