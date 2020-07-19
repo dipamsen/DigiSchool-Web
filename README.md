@@ -20,7 +20,7 @@ This repo is the Source Code of the [DigiSchool Website](https://dipamsen.github
 - Learn with Fun - Brain Games, Discussion Wall
 - Exposure to useful websites in single umbrella - E-Lab, E-Learn, E-Library, E-Dictionary
 
-**Features: **
+**Features:**
 - Study Resources - worksheets, presentations and more!
 - Self-Assessment
 - Student Discussion
