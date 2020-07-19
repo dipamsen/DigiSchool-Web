@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="logo.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+  <link rel="icon" href="logo.png">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <link rel='stylesheet' href="style.css" />
+  <title>Dashboard | DigiSchool</title>
+</head>
+
+<body onload="setTimeout(updatePage(),30)">
+  <div class="page">
+    <div class="header">
+      <img src="logo2.png" class="logo2">
+      <div class="nav">
+        <ul class="navbar body" id="myTopNav">
+          <li><a href="main.html" id="dashboard" class="navlink">DASHBOARD</a></li>
+          <li><a href="studymaterial.html" id="study" class="navlink">STUDY MATERIALS</a></li>
+          <li><a href="assessment.html" id="assess" class="navlink">ASSESSMENT</a></li>
+          <li><a href="activity.html" id="act" class="navlink">ACTIVITY</a></li>
+          <li><a href="chat.html" id="contact" class="navlink">DISCUSS</a></li>
+          <li><a href="feedback.html" id="elib" class="navlink">FEEDBACK</a></li>
+          <li><a href="./" id="log" class="navlink" style="padding: 10px 16px"><i style="padding: 0px"
+                class="fas fa-power-off"></i></a></li>
+          <li><a href="javascript:void(0);" class="navlink icon" onclick="formatnav()"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </div>
+      <link rel="stylesheet" href="style.css">
+    </div>
+    <hr>
+    <div class=" body txt">
+      <div class="med" style="text-align:center">
+        Welcome to DigiSchool!
+      </div>
+      <div class="hombloks">
+        <div class="small body homeblok hb1">
+          <h3>Announcements</h3>
+          <!-- <ul> -->
+          <li>Digital School Study Materials Launched</li>
+          <hr>
+          <li>Go to e-library to access ebooks</li>
+          <hr>
+          <li>Web-Apps included in Study Material</li>
+          <!-- </ul> -->
+        </div>
+        <div class="small body homeblok hb2">
+          <h3>Newsletter</h3>
+          <!-- <ul> -->
+          <li><a href="content/Newsletter-1.pdf" target="blank">Newsletter #1</a></li>
+          <hr>
+
+          <!-- </ul> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    w3.includeHTML();
+    function updatePage() {
+      document.getElementById("dashboard").className += " active";
+    }
+  </script>
+  <script>
+    function formatnav() {
+      let x = document.getElementById("myTopNav");
+      if (x.className === "navbar body") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar body";
+      }
+    }
+  </script>
+</body>
+
+</html>

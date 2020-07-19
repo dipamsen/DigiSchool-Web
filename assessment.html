@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <!-- <link rel="icon" href="logo.png"> -->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <link rel='stylesheet' href="/style.css" />
+  <style>
+    .name {
+      width: 70%
+    }
+  </style>
+  <title>Assessments | DigiSchool</title>
+</head>
+
+<body onload="setTimeout(updatePage(),30)">
+  <div class="page">
+    <div class="header">
+      <img src="logo2.png" class="logo2">
+      <div class="nav">
+        <ul class="navbar body" id="myTopNav">
+          <li><a href="main.html" id="dashboard" class="navlink">DASHBOARD</a></li>
+          <li><a href="studymaterial.html" id="study" class="navlink">STUDY MATERIALS</a></li>
+          <li><a href="assessment.html" id="assess" class="navlink">ASSESSMENT</a></li>
+          <li><a href="activity.html" id="act" class="navlink">ACTIVITY</a></li>
+          <li><a href="chat.html" id="contact" class="navlink">DISCUSS</a></li>
+          <li><a href="feedback.html" id="elib" class="navlink">FEEDBACK</a></li>
+          <li><a href="./" id="log" class="navlink" style="padding: 10px 16px"><i style="padding: 0px"
+                class="fas fa-power-off"></i></a></li>
+          <li><a href="javascript:void(0);" class="navlink icon" onclick="formatnav()"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </div>
+      <link rel="stylesheet" href="style.css">
+    </div>
+    <hr>
+    <h1 class="head center">Assessments</h1>
+    <div class="content">
+      <h2 class="body med center">Assessments Available:</h2>
+      <div class="options body">
+      </div>
+      <div>
+        <table class="body">
+          <tr>
+            <td><b>Class 9 / Biology / Cell</b></td>
+            <td class="form"><a href="https://forms.gle/bZmFqFG3afFeqLqt8" target="_blank">Start Test</a>
+            </td>
+          </tr>
+          <tr>
+            <td><b>Class 9 / Mathematics / Polynomial</b></td>
+            <td class="form"><a href="https://forms.gle/YQGjcem8FySNtCt78" target="_blank">Start Test</a>
+            </td>
+          </tr>
+          <tr>
+            <td><b>Class 10 / Chemistry / Acid, Bases and Salts</b></td>
+            <td class="form"><a href="https://forms.gle/cNoaesSVVXUVceEP8" target="_blank">Start Test</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <h1 class="head center">Projects</h1>
+    <div class="content">
+      <h2 class="body med center">Submit Your Projects</h2>
+      <table class="body">
+        <tr>
+          <th class="name">Name</th>
+          <th class="inst">Instructions</th>
+          <th class="subm">Submit</th>
+        </tr>
+        <tr>
+          <td>Class 9 >> Chemistry >> Chemical Reactions</td>
+          <td><a
+              href="https://drive.google.com/file/d/1ZhopOFAGHsTrsDBh406ruwzqna2z3EtH/view?usp%3Dsharing&sa=D&ust=1594319920274000&usg=AFQjCNFuP8xiQFMw80RIq9m79kP-LV9dZA"
+              target="_blank">Download</a></td>
+          <td class="form"><a href="https://forms.gle/mfYT3VtbqbmsPAMK7" target="_blank">Submit</a></td>
+        </tr>
+      </table>
+    </div><br><br>
+    <div class="body" style="text-align: center;"><i>Created by Dipam Sen</i></div>
+  </div>
+  <script>
+
+    w3.includeHTML();
+    function updatePage() {
+      document.getElementById('assess').className += " active"
+    }
+  </script>
+  <script>
+    function formatnav() {
+      let x = document.getElementById("myTopNav");
+      if (x.className === "navbar body") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar body";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

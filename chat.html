@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <!-- <link rel="icon" href="logo.png"> -->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <link rel='stylesheet' href="/style.css" />
+  <title>Discussion Wall | DigiSchool</title>
+</head>
+
+<body onload="setTimeout(updatePage(),30)">
+  <div class="header">
+    <img src="logo2.png" class="logo2">
+    <div class="nav">
+      <ul class="navbar body" id="myTopNav">
+        <li><a href="main.html" id="dashboard" class="navlink">DASHBOARD</a></li>
+        <li><a href="studymaterial.html" id="study" class="navlink">STUDY MATERIALS</a></li>
+        <li><a href="assessment.html" id="assess" class="navlink">ASSESSMENT</a></li>
+        <li><a href="activity.html" id="act" class="navlink">ACTIVITY</a></li>
+        <li><a href="chat.html" id="contact" class="navlink">DISCUSS</a></li>
+        <li><a href="feedback.html" id="elib" class="navlink">FEEDBACK</a></li>
+        <li><a href="./" id="log" class="navlink" style="padding: 10px 16px"><i style="padding: 0px"
+              class="fas fa-power-off"></i></a></li>
+        <li><a href="javascript:void(0);" class="navlink icon" onclick="formatnav()"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </div>
+    <link rel="stylesheet" href="style.css">
+  </div>
+  <hr>
+  <h1 class="head center">The Discussion Wall</h1>
+  <div class="chats body">
+    <iframe onload="this.contentDocument.body.scrollTop = 100;" src="messenger.html#end" class="chatIfram">
+
+    </iframe>
+    <form action="javascript:void(0);"
+      style="width: 100%; display: flex; flex-direction: row; justify-content: space-evenly;">
+      <input id="inp" placeholder="Write something..."></input><button class="body" onclick="update()">GO</button>
+    </form>
+  </div>
+
+  <script>
+    w3.includeHTML();
+    function updatePage() {
+      document.getElementById('contact').className += " active"
+    }
+  </script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCH12W9j5x41cXRrlXaDHij3rEjsL1fiQQ",
+      authDomain: "shoot-n-survive.firebaseapp.com",
+      databaseURL: "https://shoot-n-survive.firebaseio.com",
+      projectId: "shoot-n-survive",
+      storageBucket: "shoot-n-survive.appspot.com",
+      messagingSenderId: "192631098144",
+      appId: "1:192631098144:web:7f7ec26f0be19d1dc42545"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+
+    let database = firebase.database();
+    function formatnav() {
+      let x = document.getElementById("myTopNav");
+      if (x.className === "navbar body") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar body";
+      }
+    }
+    let chats = [];
+    database.ref('/digital-school/chats').on('value', (data) => {
+      chats = (data.val());
+    });
+    function update(txt) {
+      let text = document.getElementById('inp').value;
+      if (text == "") return
+      chats.push(text);
+      database.ref('digital-school').set({
+        chats: chats
+      })
+      document.getElementById('inp').value = '';
+
+
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="icon" href="logo.png"> -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <link rel='stylesheet' href="/style.css" />
+</head>
+<body onload="setTimeout(()=>{window.scrollTo({
+    top: 10000,
+    behavior: 'smooth',
+})}, 200);">
+
+
+    <div class="chat body"></div>
+    <a id="end"></a>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCH12W9j5x41cXRrlXaDHij3rEjsL1fiQQ",
+            authDomain: "shoot-n-survive.firebaseapp.com",
+            databaseURL: "https://shoot-n-survive.firebaseio.com",
+            projectId: "shoot-n-survive",
+            storageBucket: "shoot-n-survive.appspot.com",
+            messagingSenderId: "192631098144",
+            appId: "1:192631098144:web:7f7ec26f0be19d1dc42545"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+
+        let database = firebase.database();
+        let chats = [];
+        database.ref('/digital-school/chats').on('value', (data) => {
+            chats = (data.val());
+            let string = "";
+            string += '<message>'
+            string += chats.toString().replace(/,/g, '</message><message>')
+            string += '</message>'
+            document.getElementsByClassName('chat')[0].innerHTML = string;
+            window.scrollTo({
+                top: 10000,
+                behavior: 'smooth',
+            })
+        });
+
+    </script>
+</body>
+
+</html>

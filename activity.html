@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <!-- <link rel="icon" href="logo.png"> -->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <link rel='stylesheet' href="/style.css" />
+  <title>Activity | DigiSchool</title>
+</head>
+
+<body onload="setTimeout(updatePage(),30)">
+  <div class="page">
+    <div class="header">
+      <img src="logo2.png" class="logo2">
+      <div class="nav">
+        <ul class="navbar body" id="myTopNav">
+          <li><a href="main.html" id="dashboard" class="navlink">DASHBOARD</a></li>
+          <li><a href="studymaterial.html" id="study" class="navlink">STUDY MATERIALS</a></li>
+          <li><a href="assessment.html" id="assess" class="navlink">ASSESSMENT</a></li>
+          <li><a href="activity.html" id="act" class="navlink">ACTIVITY</a></li>
+          <li><a href="chat.html" id="contact" class="navlink">DISCUSS</a></li>
+          <li><a href="feedback.html" id="elib" class="navlink">FEEDBACK</a></li>
+          <li><a href="./" id="log" class="navlink" style="padding: 10px 16px"><i style="padding: 0px"
+                class="fas fa-power-off"></i></a></li>
+          <li><a href="javascript:void(0);" class="navlink icon" onclick="formatnav()"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </div>
+      <link rel="stylesheet" href="style.css">
+    </div>
+    <hr>
+    <h1 class="head center">Activity</h1>
+    <div class="hombloks">
+      <div class="small body homeblok hb3">
+        <h3>Brain Games</h3>
+        <li><a href="https://editor.p5js.org/dipam2006/present/jbjYPTkIe" target="_blank">Maze</a><br>Maze Game
+          - Travel to the red block.<br><i>Created by Dipam Sen</i></li>
+        <hr>
+        <li><a href="https://editor.p5js.org/dipam2006/present/JS-D-xNjE" target="_blank">The Tower of
+            Hanoi</a><br>Move the tower from one peg to another by moving one disk at a time. But don't
+          place a larger disk on a smaller one.<br><i>Created by Dipam Sen</i></li>
+        <hr>
+        <li><a href="https://editor.p5js.org/dipam2006/present/vaorX29da" target="_blank">8-puzzle</a><br>Arrange the
+          digits in ascending order by sliding the
+          blocks.<br><i>Created by Dipam Sen</i>
+        </li>
+      </div>
+      <div class="small body homeblok hb1">
+        <h3>Outsider Links</h3>
+        <li><a href="https://phet.colorado.edu/en/simulations/filter?sort=alpha&view=grid"><b>E-Lab</b> by PhET
+            Interactive Simulations</a></li>
+        <hr>
+        <li><a href="https://www.khanacademy.org"><b>E-Learn</b> by Khan Academy</a></li>
+        <hr>
+        <li><a href="https://ndl.iitkgp.ac.in/"><b>E-Library</b> by National Digital Library of India</a></li>
+        <hr>
+        <li><a href="https://code.org"><b>Learn to Code</b> by Code.org</a></li>
+        <hr>
+        <li><a href="https://www.oxfordlearnersdictionaries.com/"><b>Dictionary</b> by Oxford Dictionaries</a>
+        </li>
+
+        <hr>
+        <i>Acknowledgement: External Websites</i>
+        <!--  -->
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    w3.includeHTML();
+    function updatePage() {
+      document.getElementById('act').className += " active"
+    }
+  </script>
+  <script>
+    function formatnav() {
+      let x = document.getElementById("myTopNav");
+      if (x.className === "navbar body") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar body";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

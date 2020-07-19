@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap"
+		rel="stylesheet">
+	<!-- <link rel="icon" href="logo.png"> -->
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
+	<link rel='stylesheet' href="/style.css" />
+	<title>Feedback | DigiSchool</title>
+</head>
+
+<body onload="setTimeout(updatePage,30)">
+	<div class="header">
+		<img src="logo2.png" class="logo2">
+		<div class="nav">
+			<ul class="navbar body" id="myTopNav">
+				<li><a href="main.html" id="dashboard" class="navlink">DASHBOARD</a></li>
+				<li><a href="studymaterial.html" id="study" class="navlink">STUDY MATERIALS</a></li>
+				<li><a href="assessment.html" id="assess" class="navlink">ASSESSMENT</a></li>
+				<li><a href="activity.html" id="act" class="navlink">ACTIVITY</a></li>
+				<li><a href="chat.html" id="contact" class="navlink">DISCUSS</a></li>
+				<li><a href="feedback.html" id="elib" class="navlink">FEEDBACK</a></li>
+				<li><a href="./" id="log" class="navlink" style="padding: 10px 16px"><i style="padding: 0px"
+							class="fas fa-power-off"></i></a></li>
+				<li><a href="javascript:void(0);" class="navlink icon" onclick="formatnav()"><i class="fas fa-bars"></i></a>
+				</li>
+			</ul>
+		</div>
+		<link rel="stylesheet" href="style.css">
+	</div>
+	<hr>
+	<h1 class="head center">Feedback and Suggestions</h1>
+	<div class='body mycontent'>
+
+		<div class="body center">Provide your valuable suggestions here!</div><br>
+		<input placeholder="Name *" id="fb-name" cols=32></input><br><br>
+		<input placeholder="Email-ID (optional)" id="fb-mail" cols=32 type="email"></input><br><br>
+		<textarea rows=8 cols=32 id="fb-main" placeholder="Feedback or suggestion *"></textarea><br><br>
+		<button type="submit" onclick="upload()">SUBMIT</button>
+	</div>
+	</div>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-database.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyCH12W9j5x41cXRrlXaDHij3rEjsL1fiQQ",
+			authDomain: "shoot-n-survive.firebaseapp.com",
+			databaseURL: "https://shoot-n-survive.firebaseio.com",
+			projectId: "shoot-n-survive",
+			storageBucket: "shoot-n-survive.appspot.com",
+			messagingSenderId: "192631098144",
+			appId: "1:192631098144:web:7f7ec26f0be19d1dc42545"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
+	<script>
+		w3.includeHTML();
+		function updatePage() {
+			document.getElementById('elib').className += " active"
+		}
+	</script>
+	<script>
+		let database = firebase.database();
+		function formatnav() {
+			let x = document.getElementById("myTopNav");
+			if (x.className === "navbar body") {
+				x.className += " responsive";
+			} else {
+				x.className = "navbar body";
+			}
+		}
+		database.ref('/digital-school/feedback').on("value", (data) => {
+			let num = data.val().length;
+			database.ref('digital-school').update({
+				fbcount: num,
+			})
+		})
+		function upload() {
+			let name = document.getElementById('fb-name').value;
+			let email = document.getElementById('fb-mail').value;
+			let main = document.getElementById('fb-main').value;
+			if (name == '' || main == '') return;
+			let json = {
+				name: name,
+				email: email,
+				main: main
+			}
+			database.ref('/digital-school/fbcount').once("value", (data) => {
+				let num = data.val();
+				database.ref('/digital-school/feedback').update({
+					[num]: json,
+				})
+				document.getElementById('fb-name').value = '';
+				document.getElementById('fb-mail').value = '';
+				document.getElementById('fb-main').value = '';
+			})
+		}
+	</script>
+
+</body>
+
+</html>
